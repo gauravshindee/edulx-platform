@@ -114,7 +114,27 @@ export default function StudentDashboard() {
 
       {/* Main content */}
       <main className="flex-1 overflow-y-auto p-6 bg-gray-100">
-        <h1 className="text-2xl font-bold mb-4">🎯 University Tracker</h1>
+      <h1 className="text-2xl font-bold mb-4">🎯 University Tracker</h1>
+
+{/* Dashboard KPIs */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+  <div className="bg-white rounded shadow p-4">
+    <p className="text-sm text-gray-500">Universities Added</p>
+    <p className="text-2xl font-semibold">{universities.length}</p>
+  </div>
+  <div className="bg-white rounded shadow p-4">
+    <p className="text-sm text-gray-500">SOP Status</p>
+    <p className="text-2xl font-semibold text-green-600">✅ Filled</p>
+  </div>
+  <div className="bg-white rounded shadow p-4">
+    <p className="text-sm text-gray-500">Documents Uploaded</p>
+    <p className="text-2xl font-semibold">12</p>
+  </div>
+  <div className="bg-white rounded shadow p-4">
+    <p className="text-sm text-gray-500">Pending Approvals</p>
+    <p className="text-2xl font-semibold text-yellow-500">4</p>
+  </div>
+</div>
 
         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 bg-white p-4 rounded shadow">
           <input className="p-2 border rounded" placeholder="University Name" value={form.universityName} onChange={(e) => setForm({ ...form, universityName: e.target.value })} required />
